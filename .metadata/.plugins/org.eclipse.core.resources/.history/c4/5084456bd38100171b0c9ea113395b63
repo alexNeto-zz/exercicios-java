@@ -1,0 +1,15 @@
+package lista_i;
+
+public class Exercicio_1 {
+	
+	java.util.Scanner input = new java.util.Scanner(System.in);
+	
+	System.out.println("Digite cinco números: ");
+	int[] numeros = new int[5];
+	for(int i = 0; i < 5; i++)
+		int numero[i] = input.nextInt();
+	
+	numeros = numeros.sort();
+	
+	System.out.printf("O menor número é: %d e o maior é %d", numeros[0], numeros[4]);
+}
