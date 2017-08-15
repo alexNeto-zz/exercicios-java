@@ -1,0 +1,13 @@
+package lista_1;
+
+
+public class Cliente {
+
+	private int numeroConta;
+	private double saldoInicioMes;
+	private double totalItensMes;
+	private double totalCreditoMes;
+	private double limite;
+	
+	
+}
