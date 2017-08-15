@@ -1,0 +1,17 @@
+package lista_1;
+
+public class Exercicio_1 {
+	
+java.util.Scanner input = new java.util.Scanner(System.in);
+	
+	System.out.println("Digite um n�mero: ");
+	int numero1 = input.nextInt();
+	System.out.println("Digite outro n�mero: ");
+	int numero2 = input.nextInt();
+	
+	System.out.printf("A soma � %d", numero1 + numero2);
+	System.out.printf("A subtra��o � %d", numero1 - numero2);
+	System.out.printf("A multiplica��o � %d", numero1 * numero2);
+	System.out.printf("A divis�o � %f", Double.parceDouble(numero1 / numero2));
+
+}

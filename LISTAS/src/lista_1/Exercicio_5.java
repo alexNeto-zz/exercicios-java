@@ -1,6 +1,6 @@
 package lista_1;
 
-public class Exercicio_1 {
+public class Exercicio_5 {
 	
 	/*
 		Desenvolva um aplicativo que determinar� se um cliente de uma loja de departamentos
@@ -19,6 +19,7 @@ public class Exercicio_1 {
 	int numero1 = input.nextInt();
 	System.out.println("Digite outro n�mero: ");
 	int numero2 = input.nextInt();
+	
 	
 	System.out.println((numeros1 % numero2 == 0) ? "� divisivel" : "n�o � divisivel");
 }
