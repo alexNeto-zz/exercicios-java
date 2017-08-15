@@ -1,0 +1,19 @@
+package lista_1;
+
+public class Exercicio_2 {
+	
+	public static void exercicio() {
+		java.util.Scanner input = new java.util.Scanner(System.in);
+		
+		System.out.println("Digite um n�mero: ");
+		int numero1 = input.nextInt();
+		System.out.println("Digite outro n�mero: ");
+		int numero2 = input.nextInt();
+		
+		int soma;
+		System.out.printf("A soma é %d", soma = (numero1 + numero2));
+		System.out.printf("A média é %f", (double)(soma / 2));
+		System.out.printf("O menor número é: %d e o maior é %d", numero1 > numero2? numero1, numero2 : numero2, numero1);
+	}
+
+}
