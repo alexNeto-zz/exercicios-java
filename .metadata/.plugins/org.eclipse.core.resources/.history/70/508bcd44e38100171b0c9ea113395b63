@@ -11,6 +11,6 @@ public class Exercicio_4 {
 		System.out.println("Digite outro número: ");
 		int numero2 = input.nextInt();
 
-		System.out.println((numero1 % numero2 == 0) ? "é divisivel" : "não é divisivel");
+		System.out.println((numeros1 % numero2 == 0) ? "é divisivel" : "não é divisivel");
 	}
 }
