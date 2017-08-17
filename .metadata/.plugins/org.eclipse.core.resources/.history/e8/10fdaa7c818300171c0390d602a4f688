@@ -38,9 +38,9 @@ public class Main {
 			Exercicio_3.exercicio();
 			Exercicio_4.exercicio();
 			Exercicio_5.exercicio();
-			//Exercicio_6.exercicio();
-			//Exercicio_7.exercicio();
-			//Exercicio_8.exercicio();
+			Exercicio_6.exercicio();
+			Exercicio_7.exercicio();
+			Exercicio_8.exercicio();
 			break;
 
 		default:

@@ -14,10 +14,6 @@ public class Exercicio_5 {
 	 * cliente está excedido ou não.
 	 */
 	public static void exercicio() {
-		
-		int[] clientes = new int[10];
-		for (int i = 0; i < clientes.length; i++) {
-			
-		}
+	
 	}
 }
