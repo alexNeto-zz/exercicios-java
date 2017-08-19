@@ -8,38 +8,31 @@ public class Cliente {
 	private double totalItensMes;
 	private double totalCreditoMes;
 	private double limite;
+	private double novoSaldo;
 	
-	
-	public int getNumeroConta() {
+	public Cliente() {}
+	public Cliente(int numeroConta, double saldoInicioMes,
+			double totalItensMes, double totalCreditoMes, double limite) {
+		this.numeroConta = numeroConta;
+		this.saldoInicioMes = saldoInicioMes;
+		this.totalItensMes = totalItensMes;
+		this.totalCreditoMes = totalCreditoMes;
+		this.limite = limite;
+		
+	}
+	public boolean verificaLimite() {
+		if((this.saldoInicioMes + this.totalItensMes) < this.limite)
+			return true;
+		return false;	
+	}
+	public void setNovoSaldo() {
+		this.novoSaldo = saldoInicioMes + totalItensMes - totalCreditoMes;
+		System.out.println("Compra realizada com sucesso  para cliente nº " + numeroConta);
+	}
+	public double getNovoSaldo() {
+		return novoSaldo;
+	}
+	public double getNumeroConta() {
 		return numeroConta;
 	}
-	public void setNumeroConta(int numeroConta) {
-		this.numeroConta = numeroConta;
-	}
-	public double getSaldoInicioMes() {
-		return saldoInicioMes;
-	}
-	public void setSaldoInicioMes(double saldoInicioMes) {
-		this.saldoInicioMes = saldoInicioMes;
-	}
-	public double getTotalItensMes() {
-		return totalItensMes;
-	}
-	public void setTotalItensMes(double totalItensMes) {
-		this.totalItensMes = totalItensMes;
-	}
-	public double getTotalCreditoMes() {
-		return totalCreditoMes;
-	}
-	public void setTotalCreditoMes(double totalCreditoMes) {
-		this.totalCreditoMes = totalCreditoMes;
-	}
-	public double getLimite() {
-		return limite;
-	}
-	public void setLimite(double limite) {
-		this.limite = limite;
-	}
-	
-	
 }
