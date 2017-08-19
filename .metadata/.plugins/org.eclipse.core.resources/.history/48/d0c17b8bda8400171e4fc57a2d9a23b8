@@ -40,10 +40,10 @@ public class Main {
 			case 4:
 				System.out.println("EXERCICIO 4:");
 				System.out.println("Digite um número: ");
-				numero1 = input.nextInt();
+				int numero1 = input.nextInt();
 				System.out.println("Digite outro número: ");
-				numero2 = input.nextInt();
-				Exercicio_4.exercicio(numero1, numero2);
+				int numero2 = input.nextInt();
+				Exercicio_4.exercicio();
 				break;
 			case 5:
 				Exercicio_5.exercicio();
@@ -61,7 +61,7 @@ public class Main {
 				Exercicio_1.exercicio(numero1, numero2);
 				Exercicio_2.exercicio(numero1, numero2);
 				Exercicio_3.exercicio(numeros);
-				Exercicio_4.exercicio(numero1, numero2);
+				Exercicio_4.exercicio();
 				Exercicio_5.exercicio();
 				// Exercicio_6.exercicio();
 				// Exercicio_7.exercicio();
