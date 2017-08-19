@@ -1,20 +1,33 @@
 package lista_1;
 
 public class Main {
-
+	
 	public static void main(String[] args) {
 
+		int numero1 = 0;
+		int numero2 = 0;
+		double totalVendaBruta = 00.00;
+		double horasTrabalhadas = 00.00;
+		double valorPorHora = 00.00;
+		int[] numeros = new int[5];
+		
 		System.out.println("Escolha um Exercicio:");
+		System.out.printf("1 - Exercicio 1\n" +
+				"2 - Exercicio 2\n" +
+				"3 - Exercicio 3\n" +
+				"4 - Exercicio 4\n" +
+				"5 - Exercicio 5\n" +
+				"6 - Exercicio 6\n" +
+				"7 - Exercicio 7\n" +
+				"8 - Exercicio 8\n" +
+				"9 - Sair\n"
+				);
 		@SuppressWarnings("resource")
 		java.util.Scanner input = new java.util.Scanner(System.in);
-		while (true) {
-			int escolha = input.nextInt();
-			int numero1 = 0;
-			int numero2 = 0;
-			double totalVendaBruta = 00.00;
-			double horasTrabalhadas = 00.00;
-			double valorPorHora = 00.00;
-			int[] numeros = new int[5];
+		int escolha = 0;
+		while (true && escolha != 9) {
+			escolha = input.nextInt();
+			
 			switch (escolha) {
 			case 1:
 				System.out.println("EXERCICIO 1");
@@ -70,16 +83,6 @@ public class Main {
 				System.out.println("EXERCICIO 8");
 				System.out.println("Digite o dado a ser transmitido: ");
 				numero1 = input.nextInt();
-				Exercicio_8.exercicio(numero1);
-				break;
-			case 9:
-				Exercicio_1.exercicio(numero1, numero2);
-				Exercicio_2.exercicio(numero1, numero2);
-				Exercicio_3.exercicio(numeros);
-				Exercicio_4.exercicio(numero1, numero2);
-				Exercicio_5.exercicio();
-				Exercicio_6.exercicio(totalVendaBruta);
-				Exercicio_7.exercicio(horasTrabalhadas, valorPorHora);
 				Exercicio_8.exercicio(numero1);
 				break;
 
