@@ -50,9 +50,9 @@ public class Main {
 				Exercicio_5.exercicio();
 				break;
 			case 6:
-				System.out.println("Digite o valor das vendas da semana : ");
-				totalVendaBruta = input.nextDouble();
-				Exercicio_6.exercicio(totalVendaBruta);
+				System.out.println("Digite um número: ");
+				numero1 = input.nextDouble();
+				Exercicio_6.exercicio();
 				break;
 			case 7:
 				// Exercicio_7.exercicio();
@@ -66,7 +66,7 @@ public class Main {
 				Exercicio_3.exercicio(numeros);
 				Exercicio_4.exercicio(numero1, numero2);
 				Exercicio_5.exercicio();
-				Exercicio_6.exercicio(totalVendaBruta);
+				// Exercicio_6.exercicio();
 				// Exercicio_7.exercicio();
 				// Exercicio_8.exercicio();
 				break;

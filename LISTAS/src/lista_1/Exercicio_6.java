@@ -1,15 +1,14 @@
 package lista_1;
 
 public class Exercicio_6 {
-	/*
-	 * Considere uma grande empresa que paga seu pessoal de vendas com base em
-	 * comissões. O pessoal de vendas recebe R$ 200 por semana mais 9% de suas
-	 * vendas brutas durante a semana. Desenvolva um aplicativo que receba a entrada
-	 * de itens vendidos por um vendedor durante a última semana e calcule e exibe
-	 * os rendimentos do vendedor.
-	 */
-	public static void exercicio() {
+		
+	double salarioSemanal = 200.00;
+	
+	public static void exercicio(double totalVendaBruta) {
 
+		double comissao = 200.00 + (9/100 * totalVendaBruta);
+		System.out.println("A comissão do vendedor é de: R$" + comissao);
+		
 	}
 
 }
