@@ -80,7 +80,7 @@ public class Main {
 				Exercicio_5.exercicio();
 				Exercicio_6.exercicio(totalVendaBruta);
 				Exercicio_7.exercicio(horasTrabalhadas, valorPorHora);
-				Exercicio_8.exercicio(numero1);
+				// Exercicio_8.exercicio();
 				break;
 
 			default:

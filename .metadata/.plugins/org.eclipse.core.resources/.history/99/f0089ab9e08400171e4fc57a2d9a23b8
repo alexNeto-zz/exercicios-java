@@ -70,7 +70,7 @@ public class Main {
 				System.out.println("EXERCICIO 8");
 				System.out.println("Digite o dado a ser transmitido: ");
 				numero1 = input.nextInt();
-				Exercicio_8.exercicio(numero1);
+				Exercicio_8.exercicio();
 				break;
 			case 9:
 				Exercicio_1.exercicio(numero1, numero2);
@@ -80,7 +80,7 @@ public class Main {
 				Exercicio_5.exercicio();
 				Exercicio_6.exercicio(totalVendaBruta);
 				Exercicio_7.exercicio(horasTrabalhadas, valorPorHora);
-				Exercicio_8.exercicio(numero1);
+				// Exercicio_8.exercicio();
 				break;
 
 			default:
