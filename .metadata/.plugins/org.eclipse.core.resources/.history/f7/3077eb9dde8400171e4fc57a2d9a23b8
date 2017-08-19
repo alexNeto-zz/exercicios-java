@@ -12,8 +12,6 @@ public class Main {
 			int numero1 = 0;
 			int numero2 = 0;
 			double totalVendaBruta = 00.00;
-			double horasTrabalhadas = 00.00;
-			double valorPorHora = 00.00;
 			int[] numeros = new int[5];
 			switch (escolha) {
 			case 1:
@@ -49,22 +47,15 @@ public class Main {
 				Exercicio_4.exercicio(numero1, numero2);
 				break;
 			case 5:
-				System.out.println("EXERCICIO 5");
 				Exercicio_5.exercicio();
 				break;
 			case 6:
-				System.out.println("EXERCICIO 6");
 				System.out.println("Digite o valor das vendas da semana : ");
 				totalVendaBruta = input.nextDouble();
 				Exercicio_6.exercicio(totalVendaBruta);
 				break;
 			case 7:
-				System.out.println("EXERCICIO 7");
-				System.out.println("Digite a quantidade de horas trabalhadas: ");
-				horasTrabalhadas = input.nextDouble();
-				System.out.println("Digite o valor da hora: ");
-				valorPorHora = input.nextDouble();
-				Exercicio_7.exercicio(horasTrabalhadas, valorPorHora);
+				// Exercicio_7.exercicio();
 				break;
 			case 8:
 				// Exercicio_8.exercicio();
