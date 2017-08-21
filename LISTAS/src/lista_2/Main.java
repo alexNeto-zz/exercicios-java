@@ -16,11 +16,11 @@ public class Main {
 			switch (escolha) {
 			case 1:
 				System.out.println("EXERCICIO 1");
-				// Exercicio_1.exercicio();
+				Exercicio_1.exercicio();
 				break;
 			case 2:
 				System.out.println("EXERCICIO 2");
-				// Exercicio_2.exercicio();
+				Exercicio_2.exercicio();
 				break;
 			case 3:
 				System.out.println("EXERCICIO 3");
