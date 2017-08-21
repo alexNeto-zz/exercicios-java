@@ -20,7 +20,12 @@ public class Main {
 				break;
 			case 2:
 				System.out.println("EXERCICIO 2");
-				Exercicio_2.exercicio();
+				int[] quantidade = new int[5];
+				for(int i = 0; i < 5; i++) {
+					System.out.println("Quantidade de P" + (i + 1) + " vendidos");
+					quantidade[i] = input.nextInt();
+				}
+				Exercicio_2.exercicio(quantidade);
 				break;
 			case 3:
 				System.out.println("EXERCICIO 3");
