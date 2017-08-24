@@ -1,9 +1,0 @@
-package lista_1;
-
-public class Entrada {
-	
-	public void entrada2inteiros() {
-		
-	}
-
-}

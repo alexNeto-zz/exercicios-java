@@ -1,9 +1,0 @@
-package lista_2;
-
-public class Aplicacao_1 {
-	
-	private static Scanner scanner;
-	
-
-
-}
