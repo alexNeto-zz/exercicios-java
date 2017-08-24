@@ -17,6 +17,7 @@ create table ENDERECO(
 create table GASTOS(
 	idGastos int(6) not null primary key auto_increment,
     idCliente int(6) not null,
+    GParcial decimal(15,2),
     GTotal decimal(15,2),
     GJaneiro decimal(15,2),
     GFevereiro decimal(15,2),
@@ -39,8 +40,31 @@ create table MES_ATUAL(
 )engine=InnoDB;
 
 /**********Adicionando integridade referencial************/
-
+  
+alter table GASTOS
+	add constraint fk_idCliente foreign key (idCliente)
+	references CLIENTE(idCliente);
+    
+alter table GASTOS
+	add constraint fk_idMesAtual foreign key (idMesAtual)
+    references MES_ATUAL(idMesAtual);
+    
 alter table CLIENTE
 	add constraint fk_idEndereco foreign key (idEndereco)
     references ENDERECO(idEndereco);
     
+/****************Populando base de dados****************/
+
+insert into MES_ATUAL(Mes) values
+	('JANEIRO'),
+	('FEVEREIRO'),
+    ('MARCO'),
+	('ABRIL'),
+	('MAIO'),
+    ('JUNHO'),
+    ('JULHO'),
+    ('AGOSTO'),
+    ('SETEMBRO'),
+    ('OUTUBRO'),
+    ('NOVERMBRO'),
+    ('DEZEMBRO');

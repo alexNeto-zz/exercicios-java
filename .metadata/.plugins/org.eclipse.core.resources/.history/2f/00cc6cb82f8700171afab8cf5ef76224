@@ -1,0 +1,11 @@
+package lista_3;
+
+public class Exercicio_4 {
+
+	public static void exercicio(int numero1, int numero2) {
+		multiplo(numero1, numero2);
+	}
+	public boolean multiplo(int numero1, int numero2) {
+		return (numero1 % numero2);
+	}
+}

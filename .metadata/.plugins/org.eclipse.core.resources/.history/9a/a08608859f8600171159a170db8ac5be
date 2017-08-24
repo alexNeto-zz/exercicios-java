@@ -1,0 +1,30 @@
+package lista_2;
+
+public class Vendas {
+
+	private int[] id;
+	private double preco;
+	private double totalPreco = 0;
+	private int totalItens = 0;
+	private double[] porcentagem;
+
+	public Vendas() {
+		System.out.println("você tem que iniciar com o id<int> e o preco<double>");
+	}
+
+	public Vendas(int id, double preco) {
+		this.porcentagem = new double[5];
+		this.id = new int[5];
+		this.id[id] += 1;
+		this.preco = preco;
+		this.totalItens += 1;
+		this.totalPreco += preco;
+	}
+
+	public void porcentagem(int id) {
+		for (int i = 0; i < porcentagem.length; i++) {
+			porcentagem[i] = (100 * this.id[id - 1]) / totalItens;
+		}
+	}
+
+}

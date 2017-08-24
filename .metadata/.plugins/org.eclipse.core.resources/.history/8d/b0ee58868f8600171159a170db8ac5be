@@ -1,0 +1,12 @@
+package lista_2;
+
+public class AgendaTelefonica {
+	
+	private Pessoa[] pessoas;
+	private Scanner scanner;
+	
+	public AgendaTelefonica() {
+		pessoa = new Pessoa[5];
+		scanner = new Scanner(System.in);
+	}
+}

@@ -1,0 +1,25 @@
+package lista_3;
+
+public class Exercicio_5 {
+
+	public static void exercicio() {
+
+		int[] numeros = new int[1000];
+		for (int i = 2; i < numeros.length; i++) {
+			if (primos(i)) {
+				numeros[i] = i;
+				System.out.println(i);
+			}
+		}
+
+	}
+
+	public static boolean primos(int i) {
+		for (int j = 2; j < i - 1; j++) {
+			if (i % j == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+}

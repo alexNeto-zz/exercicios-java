@@ -1,0 +1,9 @@
+package lista_2;
+
+public class AgendaTelefonica {
+	
+	private Pessoa[] pessoas;
+	private Scanner scanner;
+	
+	
+}

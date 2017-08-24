@@ -1,0 +1,20 @@
+package lista_3;
+
+public class Exercicio_5 {
+
+	public static void exercicio() {
+
+	}
+
+	public static void primos(int[] numeros) {
+		boolean flag = false;
+		for (int j = 0; j < numeros.length; j++) {
+			for (int i = numeros.length; i > 1; i--) {
+				if (numeros[index] % i == 0) {
+					flag = true;
+				}
+			}
+		}
+
+	}
+}
