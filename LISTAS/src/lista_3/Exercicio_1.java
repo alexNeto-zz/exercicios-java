@@ -1,6 +1,7 @@
 package lista_3;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Vector;
 
@@ -99,6 +100,7 @@ class AgendaTelefonica {
 	private ArrayList<Pessoa> pessoasArrList;
 	private Scanner scanner;
 	private int appPer = 1;
+	private int i = 0;
 
 	public AgendaTelefonica(int appPer) {
 		this.appPer = appPer;
@@ -114,20 +116,19 @@ class AgendaTelefonica {
 		}
 	}
 
+	@SuppressWarnings("unused")
 	public void cadastrarPessoa() {
-		for (int i = 0; i < J; i++) {
-			if (pessoas[i] == null) {
-				System.out.println("\n Insira um nome para a pessoa");
-				String nome = scanner.next();
-				System.out.println("\nInsira um telefone para a pessoa");
-				String telefone = scanner.next();
-				System.out.println("\nInsira um email para a pessoa");
-				String email = scanner.next();
-				Pessoa nova = new Pessoa(nome, telefone, email);
-				permanencia(appPer, nova, i);
-				System.out.println("\nNovo contato adicionado\n");
-				break;
-			}
+		for (; this.i < J; this.i++) {
+			System.out.println("\n Insira um nome para a pessoa");
+			String nome = scanner.next();
+			System.out.println("\nInsira um telefone para a pessoa");
+			String telefone = scanner.next();
+			System.out.println("\nInsira um email para a pessoa");
+			String email = scanner.next();
+			Pessoa nova = new Pessoa(nome, telefone, email);
+			permanencia(appPer, nova, this.i);
+			System.out.println("\nNovo contato adicionado\n");
+			break;
 		}
 	}
 
@@ -151,10 +152,30 @@ class AgendaTelefonica {
 	}
 
 	public void imprimirPessoas() {
-		for (Pessoa pessoa : pessoas) {
-			if (pessoa != null) {
-				System.out.println("\nNome: " + pessoa.getNome() + "\nTelefone: " + pessoa.getTelefone() + "\nEmail: "
-						+ pessoa.getEmail());
+		if (appPer == 1) {
+			for (Pessoa pessoa : pessoas) {
+				if (pessoa != null) {
+					System.out.println("\nNome: " + pessoa.getNome() + "\nTelefone: " + pessoa.getTelefone()
+							+ "\nEmail: " + pessoa.getEmail());
+				}
+			}
+		} else if (appPer == 2) {
+			int j = 0;
+			Iterator<Pessoa> itePessVec = pessoasVec.iterator();
+			while (itePessVec.hasNext()) {
+				itePessVec.next();
+				System.out.println("\nNome: " + pessoasVec.get(j).getNome() + "\nTelefone: "
+						+ pessoasVec.get(j).getTelefone() + "\nEmail: " + pessoasVec.get(j).getEmail());
+				j++;
+			}
+		} else if (appPer == 3) {
+			int j = 0;
+			Iterator<Pessoa> itePessArrList = pessoasArrList.iterator();
+			while (itePessArrList.hasNext()) {
+				itePessArrList.next();
+				System.out.println("\nNome: " + pessoasArrList.get(j).getNome() + "\nTelefone: "
+						+ pessoasArrList.get(j).getTelefone() + "\nEmail: " + pessoasArrList.get(j).getEmail());
+				j++;
 			}
 		}
 	}

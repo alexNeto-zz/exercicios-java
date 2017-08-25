@@ -1,7 +1,13 @@
 package lista_1;
 
 public class Exercicio_8 {
-	// se sobrar tempo, crie os objetos e mostre eles
+	
+	public static void exercicio() {
+		Aluno aluno = new Aluno("João", 14433254, "3A");
+		Professor prof = new Professor("Arakaki", 12121212);
+		System.out.println(aluno.getNome());
+		System.out.println(prof.getNome());
+	}
 
 }
 

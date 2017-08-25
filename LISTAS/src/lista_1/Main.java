@@ -4,7 +4,6 @@ public class Main {
 
 	public static void main(String[] args) {
 
-
 		@SuppressWarnings("resource")
 		java.util.Scanner input = new java.util.Scanner(System.in);
 		int escolha = 0;
@@ -18,35 +17,35 @@ public class Main {
 			switch (escolha) {
 			case 1:
 				System.out.println("EXERCICIO 1");
-				// Exercicio_1.exercicio();
+				Exercicio_1.exercicio();
 				break;
 			case 2:
 				System.out.println("EXERCICIO 2");
-				// Exercicio_2.exercicio();
+				Exercicio_2.exercicio();
 				break;
 			case 3:
 				System.out.println("EXERCICIO 3");
-				// Exercicio_3.exercicio();
+				Exercicio_3.exercicio();
 				break;
 			case 4:
 				System.out.println("EXERCICIO 4");
-				// Exercicio_4.exercicio(numero1, numero2);
+				Exercicio_4.exercicio();
 				break;
 			case 5:
 				System.out.println("EXERCICIO 5");
-				// Exercicio_5.exercicio();
+				Exercicio_5.exercicio();
 				break;
 			case 6:
 				System.out.println("EXERCICIO 6");
-				// Exercicio_6.exercicio();
+				Exercicio_6.exercicio();
 				break;
 			case 7:
 				System.out.println("EXERCICIO 7");
-				// Exercicio_7.exercicio();
+				Exercicio_7.exercicio();
 				break;
 			case 8:
 				System.out.println("EXERCICIO 8");
-				// Exercicio_8.exercicio();
+				Exercicio_8.exercicio();
 				break;
 
 			default:
