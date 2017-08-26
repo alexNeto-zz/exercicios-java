@@ -5,21 +5,8 @@ import java.util.Scanner;
 
 public class Exercicio_6 {
 
-	/*
-	 * Uma loja o contratou para desenvolver um aplicativo para gerenciamento de
-	 * relacionamento com clientes e mineração de dados. O objetivo do é armazenar
-	 * informações sobre cada cliente e o total de gasto por cada cliente ao longo
-	 * de 12 meses. Dessa forma escreva um aplicativo que armazene informações de
-	 * clientes como: Nome, Email, Telefone e Endereço e de dinheiro gasto para cada
-	 * uns dos últimos 12 meses. O Aplicativo deve informa o montante gasto por
-	 * todos os clientes para cada mês e para o total do período de 12 meses, além
-	 * de informa qual foi o cliente que mais gastou dinheiro por mês e no período
-	 * total de 12 meses. O aplicativo também deve permitir cadastro e exclusão de
-	 * clientes e também a possibilidade editar dados de clientes como telefone ou
-	 * endereço.
-	 */
-
 	public static void exercicio() {
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		AppMan app = new AppMan();
 		int sair = 0;
@@ -31,14 +18,38 @@ public class Exercicio_6 {
 				opcao = scanner.nextInt();
 				break;
 			case 1:
-				// app.imprimirPessoas();
+				app.cadastrarCliente();
 				opcao = 0;
 				break;
 			case 2:
-				app.cadastrarPessoa();
+				app.dadosCadastrais();
 				opcao = 0;
 				break;
 			case 3:
+				app.dadosConsumo();
+				opcao = 0;
+				break;
+			case 4:
+				app.dadosCompleto();
+				opcao = 0;
+				break;
+			case 5: 
+				app.deletarCliente();
+				opcao = 0;
+				break;
+			case 6:
+				app.maiorConsumidor();
+				opcao = 0;
+				break;
+			case 7: 
+				app.maiorConsumidorMes();
+				opcao = 0;
+				break;
+			case 8:
+				app.novoGasto();
+				opcao = 0;
+				break;
+			case 9:
 				sair = 1;
 				System.out.println("\nAté mais!");
 				break;

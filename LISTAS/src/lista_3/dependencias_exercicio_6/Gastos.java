@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 public class Gastos {
 	private double[] meses = new double[13];
+	private String[] nomeMeses = { "janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto",
+			"setembro", "outubro", "novembro", "dezembro" };
 	private double total;
 	private int mesAtual;
 
@@ -22,6 +24,7 @@ public class Gastos {
 	}
 
 	public void adicionarGasto(double gasto) {
+		atualizaMes();
 		meses[12] += gasto;
 	}
 
@@ -33,19 +36,42 @@ public class Gastos {
 	}
 
 	public void calculaTotal(double[] meses) {
+		total = 0;
 		for (int i = 0; i < meses.length - 1; i++) {
 			total += meses[i];
 		}
 	}
-	
+
 	public void gastosMeses() {
-		for (int i = 0; i < meses.length - 1; i++) {
-			System.out.println(meses[i]);
+		System.out.println();
+		for (int i = 0; i < nomeMeses.length; i++) {
+			System.out.print(nomeMeses[i] + "\t");
 		}
-		
+		System.out.println();
+		for (int i = 0; i < meses.length - 1; i++) {
+			System.out.print(meses[i] + "\t");
+		}
+		System.out.println();
+
 	}
-	
+
 	public double getTotal() {
+		calculaTotal(meses);
 		return total;
+	}
+
+	public double getMeses(int i) {
+		return meses[i - 1];
+	}
+
+	public void showNomeMeses(int j) {
+		if (j == 0) {
+			for (int i = 0; i < nomeMeses.length - 1; i++) {
+				System.out.println((i + 1) + " - " + nomeMeses[i]);
+			}
+		}
+		else {
+			System.out.println(nomeMeses[j]);
+		}
 	}
 }
