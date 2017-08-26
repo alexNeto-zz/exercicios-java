@@ -1,6 +1,7 @@
 package lista_3;
 
-import java.io.*;
+import lista_3.dependencias_exercicio_6.*;
+import java.util.Scanner;
 
 public class Exercicio_6 {
 
@@ -19,37 +20,37 @@ public class Exercicio_6 {
 	 */
 
 	public static void exercicio() {
-		// create runtime to execute external command
-		try {
-			Process p = Runtime.getRuntime().exec("python3 ./src/lista_3/getCep.py");
-			BufferedReader bfr = new BufferedReader(new InputStreamReader(p.getInputStream()));
-			String line = "";
-			
-			while ((line = bfr.readLine()) != null) {
-				System.out.println(line);
+		Scanner scanner = new Scanner(System.in);
+		AppMan app = new AppMan();
+		int sair = 0;
+		int opcao = 0;
+		while (sair == 0) {
+			switch (opcao) {
+			case 0:
+				app.imprimirOpcoes();
+				opcao = scanner.nextInt();
+				break;
+			case 1:
+				// app.imprimirPessoas();
+				opcao = 0;
+				break;
+			case 2:
+				app.cadastrarPessoa();
+				opcao = 0;
+				break;
+			case 3:
+				sair = 1;
+				System.out.println("\nAté mais!");
+				break;
+			default:
+				app.imprimirOpcoes();
+				opcao = scanner.nextInt();
+				break;
 			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			
 		}
 	}
 }
 
-/*
- * class Cliente {
- * 
- * private String nome; private String email; private String teleefone; private
- * Endereco endereco;
- * 
- * 
- * }
- * 
- * class Gastos { private double janeiro; private double fevereiro; private
- * double marco; private double abril; private double maio; private double
- * junho; private double julho; private double agosto; private double setembro;
- * private double outubro; private double novembro; private double dezembro;
- * private double total; private double parcial; private int mesAtual; }
- * 
- * class Endereco { }
- */
+
+
+
