@@ -19,19 +19,19 @@ public class Exercicio_6 {
 	 */
 
 	public static void exercicio() {
+		// create runtime to execute external command
 		try {
-			Runtime r = Runtime.getRuntime();
-			Process p = r.exec("python3 n.py");
-			BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
-			p.waitFor();
+			Process p = Runtime.getRuntime().exec("python3 ./src/lista_3/getCep.py");
+			BufferedReader bfr = new BufferedReader(new InputStreamReader(p.getInputStream()));
 			String line = "";
-			while (br.ready())
-				System.out.println(br.readLine());
-
-		} catch (Exception e) {
-			String cause = e.getMessage();
-			if (cause.equals("python: not found"))
-				System.out.println("No python interpreter found.");
+			
+			while ((line = bfr.readLine()) != null) {
+				System.out.println(line);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
 		}
 	}
 }
