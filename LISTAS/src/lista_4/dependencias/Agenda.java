@@ -1,11 +1,16 @@
 package lista_4.dependencias;
 
-import java.awt.List;
+import java.util.ArrayList;
 
 public class Agenda {
 
-	private List alunos;
-	private List professores;
+	private ArrayList<Aluno> alunos;
+	private ArrayList<Professor> professores;
+	
+	public Agenda() {
+		alunos = new ArrayList<Aluno>();
+		professores = new ArrayList<Professor>();
+	}
 	
 	public void listarTodos() {
 		System.out.println("Lista de contatos de alunos: ");
@@ -24,20 +29,21 @@ public class Agenda {
 		}
 	}
 	
-	public List getAlunos(){
+	
+	public ArrayList<Aluno> getAlunos(){
 		return alunos;
 	}
 	
-	public void setAlunos(List alunos) {
-		this.alunos = alunos;
+	public void setAlunos(Aluno aluno) {
+		this.alunos.add(aluno);
 	}
 	
-	public List<Professor> getProfessor(){
+	public ArrayList<Professor> getProfessor(){
 		return professores;
 	}
 	
-	public void setProfessores(List<Professor> professores) {
-		this.professores = professores;
+	public void setProfessores(Professor professore) {
+		this.professores.add(professore);
 	}
 	
 }

@@ -11,13 +11,13 @@ public class AppMan {
 
 	public void imprimirOpcoes() {
 		System.out.println("\nEscolha uma das opções: \n");
-		System.out.println("1 - Cadastrar cliente");//
-		System.out.println("2 - Listar dados cadastrais");//
-		System.out.println("3 - Listar dados de consumo");//
-		System.out.println("4 - Listar todos dados"); //
-		System.out.println("5 - Deletar cliente"); //
-		System.out.println("6 - Quem consumiu mais geral"); //
-		System.out.println("7 - Quem consumiu mais mensal");//
+		System.out.println("1 - Cadastrar cliente");
+		System.out.println("2 - Listar dados cadastrais");
+		System.out.println("3 - Listar dados de consumo");
+		System.out.println("4 - Listar todos dados"); 
+		System.out.println("5 - Deletar cliente"); 
+		System.out.println("6 - Quem consumiu mais geral"); 
+		System.out.println("7 - Quem consumiu mais mensal");
 		System.out.println("8 - Adicionar compra"); 
 		System.out.println("9 - Sair");
 		System.out.println();
