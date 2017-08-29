@@ -2,7 +2,7 @@ package lista_5;
 
 import java.util.Scanner;
 
-import lista_4.AppMan;
+import lista_5.dependencias.Menu;
 
 public class Main {
 
@@ -10,48 +10,10 @@ public class Main {
 
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Escola o exercicio: 1 - agenda\n2 - Exercicio 2\n3 - Exercicio 3");
+		System.out.println("Escola o exercicio:\n1 - Agenda\n2 - Exercicio 2\n3 - Exercicio 3");
 		int escolha = scanner.nextInt();
 		if (escolha == 1) {
-			AppMan app = new AppMan();
-			int sair = 0;
-			int opcao = 0;
-			while (sair == 0) {
-				switch (opcao) {
-				case 0:
-					app.imprimirOpcoes();
-					opcao = scanner.nextInt();
-					break;
-				case 1:
-					app.cadastrarNovoAluno();
-					opcao = 0;
-					break;
-				case 2:
-					app.cadastrarNovoProfessor();
-					opcao = 0;
-					break;
-				case 3:
-					app.listarTodos();
-					opcao = 0;
-					break;
-				case 4:
-					app.editar();
-					opcao = 0;
-					break;
-				case 5:
-					app.deletar();
-					opcao = 0;
-					break;
-				case 6:
-					sair = 1;
-					System.out.println("\nAté mais!");
-					break;
-				default:
-					app.imprimirOpcoes();
-					opcao = scanner.nextInt();
-					break;
-				}
-			}
+			Menu.menuPrincipal();
 		} else if (escolha == 2) {
 			System.out.println("EXERCICIO 2");
 			System.out.println("Digite o tamanho do quadrado (1-20):");
