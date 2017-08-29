@@ -29,8 +29,9 @@ public class SqliteInterface {
 				+ "telefone varchar(11) not null unique);";
 		String aluno = "create table if not exists aluno(" + "id_aluno integer not null primary key autoincrement,"
 				+ "matricula char(12) unique," + "id_pessoa integer unique,"
-				+ "foreign key (id_pessoa) REFERENCES pessoa (id_pessoa)ON UPDATE SET default);";
-		String professor = "create table if not exists professor(" + "id_professor integer not null primary key autoincrement,"
+				+ "foreign key (id_pessoa) references pessoa(id_pessoa) on update set default);";
+		String professor = "create table if not exists professor("
+				+ "id_professor integer not null primary key autoincrement,"
 				+ "registro char(12) unique, aulahora varchar," + "id_pessoa integer unique,"
 				+ " foreign key (id_pessoa) references pessoa(id_pessoa) on update set default);";
 
@@ -54,57 +55,57 @@ public class SqliteInterface {
 		return conn;
 	}
 
-	public ResultSet selecionaUltimoIDPessoa() {
+	public int selecionaUltimoIDPessoa() {
 		String sql = "SELECT MAX(id_pessoa) FROM pessoa";
 		try (Connection conn = this.conecta();
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(sql)) {
-			return rs;
+			System.out.println(rs.getInt(1));
+			return rs.getInt(1);
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
-		return null;
+		return 0;
 	}
 
-	public void insereAluno(String nome, String email, String telefone, String matricula) {
+	public void insere(String nome, String email, String telefone) {
 		String pessoa = "insert into pessoa(nome, email, telefone) values(?, ?, ?);";
-		String aluno = "insert into aluno(matricula, id_pessoa) values(?, ?)";
-		try (Connection conn = this.conecta();
-				PreparedStatement pstmt = conn.prepareStatement(pessoa);
-				PreparedStatement altmt = conn.prepareStatement(aluno)) {
-			ResultSet ultimoID = selecionaUltimoIDPessoa();
+		try (Connection conn = this.conecta(); PreparedStatement pstmt = conn.prepareStatement(pessoa)) {
 			pstmt.setString(1, nome);
 			pstmt.setString(2, email);
 			pstmt.setString(3, telefone);
 			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
+
+	public void insereAluno(String matricula) {
+		String aluno = "insert into aluno(matricula, id_pessoa) values(?, ?)";
+		try (Connection conn = this.conecta(); PreparedStatement altmt = conn.prepareStatement(aluno)) {
+			int ultimoID = selecionaUltimoIDPessoa();
 			altmt.setString(1, matricula);
-			altmt.setInt(2, ultimoID.getInt("id_pessoa"));
+			altmt.setInt(2, ultimoID);
 			altmt.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
 	}
 
-	public void insereProfessor(String nome, String email, String telefone, String registro, String aulahora) {
-		String pessoa = "insert into pessoa(nome, email, telefone) values(?, ?, ?);";
-		String professor = "insert into professor(registro, aulahora) value(?, ?);";
-		try (Connection conn = this.conecta();
-				PreparedStatement pstmt = conn.prepareStatement(pessoa);
-				PreparedStatement prtmt = conn.prepareStatement(professor)) {
-			ResultSet ultimoID = selecionaUltimoIDPessoa();
-			pstmt.setString(1, nome);
-			pstmt.setString(2, email);
-			pstmt.setString(3, telefone);
-			pstmt.executeUpdate();
+	public void insereProfessor(String registro, String aulahora) {
+		String professor = "insert into professor(registro, aulahora, id_pessoa) values(?, ?, ?);";
+		try (Connection conn = this.conecta(); PreparedStatement prtmt = conn.prepareStatement(professor)) {
+			int ultimoID = selecionaUltimoIDPessoa();
 			prtmt.setString(1, registro);
 			prtmt.setString(2, aulahora);
-			prtmt.setInt(3, ultimoID.getInt("id_pessoa"));
-			pstmt.executeUpdate();
+			prtmt.setInt(3, ultimoID);
+			prtmt.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
 	}
-
+		
 	public ResultSet selecionaAluno() {
 		String sql = "select * from aluno;";
 		try (Connection conn = this.conecta();

@@ -57,8 +57,8 @@ public class Agenda {
 
 	public void cadastrarNovoAluno() {
 		Aluno novoAluno = cadastrarAluno();
-		sqliteBD.insereAluno(novoAluno.getNome(), novoAluno.getEmail(), novoAluno.getTelefone(),
-				novoAluno.getNumeroMatricula());
+		sqliteBD.insere(novoAluno.getNome(), novoAluno.getEmail(), novoAluno.getTelefone());
+		sqliteBD.insereAluno(novoAluno.getNumeroMatricula());
 	}
 
 	public Professor cadastrarProfessor() {
@@ -70,7 +70,7 @@ public class Agenda {
 		System.out.println("Digite o telefone: ");
 		professor.setTelefone(scanner.next());
 		System.out.println("Digite o número do registro: ");
-		professor.setQuantidadeHoraAula(scanner.next());
+		professor.setNumeroRegistro(scanner.next());
 		System.out.println("Digite a quantidade de hora/aula: ");
 		professor.setQuantidadeHoraAula(scanner.next());
 		return professor;
@@ -78,8 +78,8 @@ public class Agenda {
 
 	public void cadastrarNovoProfessor() {
 		Professor novoProfessor = cadastrarProfessor();
-		sqliteBD.insereProfessor(novoProfessor.getNome(), novoProfessor.getEmail(), novoProfessor.getTelefone(),
-				novoProfessor.getNumeroRegistro(), novoProfessor.getQuantidadeHoraAula());
+		sqliteBD.insere(novoProfessor.getNome(), novoProfessor.getEmail(), novoProfessor.getTelefone());
+		sqliteBD.insereProfessor(novoProfessor.getNumeroRegistro(), novoProfessor.getQuantidadeHoraAula());
 	}
 
 	public void mostraAluno() {
@@ -87,8 +87,8 @@ public class Agenda {
 		System.out.println("Selecione quem deseja editar:");
 		try {
 			while (rs.next()) {
-				System.out.println(rs.getInt("id_aluno") + " - " + rs.getString("nome"));
-				System.out.println("Matricula: " + rs.getString("matricula"));
+				System.out.println(rs.getInt(1) + " - " + rs.getString(2));
+				System.out.println("Matricula: " + rs.getString(1));
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
