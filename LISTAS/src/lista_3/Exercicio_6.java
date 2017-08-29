@@ -1,7 +1,8 @@
 package lista_3;
 
-import lista_3.dependencias_exercicio_6.*;
 import java.util.Scanner;
+
+import lista_3.dependencias.*;
 
 public class Exercicio_6 {
 
