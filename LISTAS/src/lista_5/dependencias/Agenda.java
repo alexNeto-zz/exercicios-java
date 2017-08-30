@@ -88,7 +88,7 @@ public class Agenda {
 		try {
 			while (rs.next()) {
 				System.out.println(rs.getInt(1) + " - " + rs.getString(2));
-				System.out.println("Matricula: " + rs.getString(1));
+				System.out.println("Matricula: " + rs.getString(3));
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -100,7 +100,7 @@ public class Agenda {
 		System.out.println("Selecione quem deseja editar:");
 		try {
 			while (rs.next()) {
-				System.out.println(rs.getInt("id_professor") + " - " + rs.getString("nome"));
+				System.out.println(rs.getInt(1) + " - " + rs.getString(2));
 				System.out.println("Registro: " + rs.getString("registro"));
 			}
 		} catch (SQLException e) {
