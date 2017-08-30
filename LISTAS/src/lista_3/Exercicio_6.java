@@ -2,7 +2,7 @@ package lista_3;
 
 import java.util.Scanner;
 
-import lista_3.dependencias.*;
+import lista_3.dependencias.exercicio_6.AppMan;
 
 public class Exercicio_6 {
 

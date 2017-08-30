@@ -1,4 +1,4 @@
-package lista_1.dependencias;
+package lista_1.dependencias.exercicio_8;
 
 public class Professor extends Pessoa{
 	

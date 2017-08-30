@@ -1,4 +1,4 @@
-package lista_1.dependencias;
+package lista_1.dependencias.exercicio_5;
 
 public class While {
 

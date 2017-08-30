@@ -1,8 +1,6 @@
 package lista_1;
 
-import lista_1.dependencias.Print;
-import lista_1.dependencias.Printf;
-import lista_1.dependencias.Println;
+import lista_1.dependencias.exercicio_1.*;
 
 public class Exercicio_1 {
 

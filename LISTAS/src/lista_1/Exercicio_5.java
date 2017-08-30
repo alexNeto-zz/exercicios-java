@@ -1,7 +1,7 @@
 package lista_1;
 
-import lista_1.dependencias.For;
-import lista_1.dependencias.While;
+import lista_1.dependencias.exercicio_5.For;
+import lista_1.dependencias.exercicio_5.While;
 
 public class Exercicio_5 {
 	

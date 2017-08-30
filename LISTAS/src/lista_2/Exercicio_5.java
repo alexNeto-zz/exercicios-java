@@ -1,5 +1,7 @@
 package lista_2;
 
+import lista_2.dependencias.Cliente;
+
 public class Exercicio_5 {
 
 	public static void exercicio() {
@@ -21,46 +23,9 @@ public class Exercicio_5 {
 			if (clientes[i].verificaLimite() == true) {
 				clientes[i].setNovoSaldo();
 				System.out.println("Novo saldo de: " + clientes[i].getNovoSaldo());
-			}
-			else {
+			} else {
 				System.out.println("Limite insuficiente para cliente nº " + clientes[i].getNumeroConta());
 			}
 		}
-	}
-}
-
-class Cliente {
-
-	private int numeroConta;
-	private double saldoInicioMes;
-	private double totalItensMes;
-	private double totalCreditoMes;
-	private double limite;
-	private double novoSaldo;
-	
-	public Cliente() {}
-	public Cliente(int numeroConta, double saldoInicioMes,
-			double totalItensMes, double totalCreditoMes, double limite) {
-		this.numeroConta = numeroConta;
-		this.saldoInicioMes = saldoInicioMes;
-		this.totalItensMes = totalItensMes;
-		this.totalCreditoMes = totalCreditoMes;
-		this.limite = limite;
-		
-	}
-	public boolean verificaLimite() {
-		if((this.saldoInicioMes + this.totalItensMes) < this.limite)
-			return true;
-		return false;	
-	}
-	public void setNovoSaldo() {
-		this.novoSaldo = saldoInicioMes + totalItensMes - totalCreditoMes;
-		System.out.println("Compra realizada com sucesso  para cliente nº " + numeroConta);
-	}
-	public double getNovoSaldo() {
-		return novoSaldo;
-	}
-	public double getNumeroConta() {
-		return numeroConta;
 	}
 }

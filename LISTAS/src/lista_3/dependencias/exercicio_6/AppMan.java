@@ -1,4 +1,4 @@
-package lista_3.dependencias;
+package lista_3.dependencias.exercicio_6;
 
 import java.util.ArrayList;
 import java.util.Iterator;

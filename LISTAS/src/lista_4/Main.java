@@ -2,6 +2,8 @@ package lista_4;
 
 import java.util.Scanner;
 
+import lista_4.dependencias.AppMan;
+
 public class Main {
 
 	public static void main(String[] args) {

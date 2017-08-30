@@ -1,4 +1,4 @@
-package lista_4;
+package lista_4.dependencias;
 
 import java.util.Iterator;
 import java.util.Scanner;

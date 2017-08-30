@@ -1,7 +1,7 @@
 package lista_1;
 
-import lista_1.dependencias.Aluno;
-import lista_1.dependencias.Professor;
+import lista_1.dependencias.exercicio_8.Aluno;
+import lista_1.dependencias.exercicio_8.Professor;
 
 public class Exercicio_8 {
 	

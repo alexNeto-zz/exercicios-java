@@ -1,6 +1,6 @@
 package lista_1;
 
-import lista_1.dependencias.OperadoresLogicos;
+import lista_1.dependencias.exercicio_7.OperadoresLogicos;
 
 public class Exercicio_7 {
 
