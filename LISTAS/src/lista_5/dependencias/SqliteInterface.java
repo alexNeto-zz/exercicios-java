@@ -32,8 +32,6 @@ public class SqliteInterface extends SqliteCIADImplements {
 		return null;
 	}
 
-	//////////////////////////////////////////////////////////////////////
-
 	public void selecionaAluno(int modo) {
 		String sql = "select * from aluno;";
 		try (Connection conn = this.conecta();
@@ -41,14 +39,14 @@ public class SqliteInterface extends SqliteCIADImplements {
 				ResultSet rs = stmt.executeQuery(sql)) {
 			if (modo == 0) {
 				while (rs.next()) {
-					String[] pessoa = seleciona(rs.getInt("id_aluno"));
+					String[] pessoa = seleciona(rs.getInt("id_pessoa"));
 					System.out.println(rs.getInt("id_aluno") + " - " + pessoa[0]);
 					System.out.println("Matricula: " + rs.getString("matricula"));
 					System.out.println();
 				}
 			} else {
 				while (rs.next()) {
-					String[] pessoa = seleciona(rs.getInt("id_aluno"));
+					String[] pessoa = seleciona(rs.getInt("id_pessoa"));
 					System.out.println("Nome: " + pessoa[0]);
 					System.out.println("E-mail: " + pessoa[1]);
 					System.out.println("Telefone: " + pessoa[2]);
@@ -66,16 +64,16 @@ public class SqliteInterface extends SqliteCIADImplements {
 		try (Connection conn = this.conecta();
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(sql)) {
-			if(modo == 0) {
-			while (rs.next()) {
-				String[] pessoa = seleciona(rs.getInt("id_professor"));
-				System.out.println(rs.getInt("id_professor") + " - " + pessoa[0]);
-				System.out.println("Registro: " + rs.getString("registro"));
-				System.out.println();
-			}}
-			else {
+			if (modo == 0) {
 				while (rs.next()) {
-					String[] pessoa = seleciona(rs.getInt("id_aluno"));
+					String[] pessoa = seleciona(rs.getInt("id_pessoa"));
+					System.out.println(rs.getInt("id_professor") + " - " + pessoa[0]);
+					System.out.println("Registro: " + rs.getString("registro"));
+					System.out.println();
+				}
+			} else {
+				while (rs.next()) {
+					String[] pessoa = seleciona(rs.getInt("id_pessoa"));
 					System.out.println("Nome: " + pessoa[0]);
 					System.out.println("E-mail: " + pessoa[1]);
 					System.out.println("Telefone: " + pessoa[2]);
@@ -87,23 +85,43 @@ public class SqliteInterface extends SqliteCIADImplements {
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
+	}
 
+	public int selecionaID(int id, int tipo) {
+		String sql = "";
+		if (tipo == 1) {
+			sql = "select id_pessoa from aluno where id_aluno = " + id + ";";
+		} else if (tipo == 2) {
+			sql = "select id_pessoa from professor where id_professor = " + id + ";";
+		} else {
+			return 0;
+		}
+		int id_pessoa = 0;
+		try (Connection conn = this.conecta();
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(sql)) {
+
+			id_pessoa = rs.getInt("id_pessoa");
+			return id_pessoa;
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			return 0;
+		}
 	}
 
 	public void atualizaAluno(int id, String nome, String email, String telefone, String matricula) {
-		String pessoa = "update pessoa set nome = ?, email = ?, telefone = ? where id = ?;";
-		String aluno = "update aluno set matricula = ? where id = ?;";
-		String sql = "select id_pessoa from aluno where id = ?;";
+		String pessoa = "update pessoa set nome = ?, email = ?, telefone = ? where id_pessoa = ?;";
+		String aluno = "update aluno set matricula = ? where id_aluno = ?;";
+
 		try (Connection conn = this.conecta();
 				PreparedStatement pstmt = conn.prepareStatement(pessoa);
-				PreparedStatement altmt = conn.prepareStatement(aluno);
-				Statement stmt = conn.createStatement();
-				ResultSet rs = stmt.executeQuery(sql)) {
+				PreparedStatement altmt = conn.prepareStatement(aluno)) {
 
 			pstmt.setString(1, nome);
 			pstmt.setString(2, email);
 			pstmt.setString(3, telefone);
-			pstmt.setInt(4, rs.getInt(id));
+			pstmt.setInt(4, selecionaID(id, 1)); // 1 = aluno
 			pstmt.executeUpdate();
 			altmt.setString(1, matricula);
 			altmt.setInt(2, id);
@@ -115,19 +133,17 @@ public class SqliteInterface extends SqliteCIADImplements {
 
 	public void atualizaProfessor(int id, String nome, String email, String telefone, String registro,
 			String aulahora) {
-		String pessoa = "update pessoa set nome = ?, email = ?, telefone = ? where id = ?;";
-		String professor = "update professor set registro = ?, aulahora = ? where id = ?;";
-		String sql = "select id_pessoa from aluno where id = ?;";
+		String pessoa = "update pessoa set nome = ?, email = ?, telefone = ? where id_pessoa = ?;";
+		String professor = "update professor set registro = ?, aulahora = ? where id_aluno = ?;";
+
 		try (Connection conn = this.conecta();
 				PreparedStatement pstmt = conn.prepareStatement(pessoa);
-				PreparedStatement prtmt = conn.prepareStatement(professor);
-				Statement stmt = conn.createStatement();
-				ResultSet rs = stmt.executeQuery(sql)) {
+				PreparedStatement prtmt = conn.prepareStatement(professor)) {
 
 			pstmt.setString(1, nome);
 			pstmt.setString(2, email);
 			pstmt.setString(3, telefone);
-			pstmt.setInt(4, rs.getInt(id));
+			pstmt.setInt(4, selecionaID(id, 2)); // 2 = professor
 			pstmt.executeUpdate();
 			prtmt.setString(1, registro);
 			prtmt.setString(2, aulahora);
@@ -139,20 +155,26 @@ public class SqliteInterface extends SqliteCIADImplements {
 	}
 
 	public void deleteAluno(int id) {
-		String sql = "delete from aluno where id = ?";
-		try (Connection conn = this.conecta(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
-			pstmt.setInt(1, id);
-			pstmt.executeUpdate();
+		String aluno = "delete from aluno where id_aluno = " + id + ";";
+		String pessoa = "delete from pessoa where id_pessoa = " + selecionaID(id, 1) + ";";
+		try (Connection conn = this.conecta();
+				PreparedStatement delaluno = conn.prepareStatement(aluno);
+				PreparedStatement delpessoa = conn.prepareStatement(pessoa)) {
+			delpessoa.executeUpdate();
+			delaluno.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
 	}
 
 	public void deleteProfessor(int id) {
-		String sql = "delete from professor where id = ?";
-		try (Connection conn = this.conecta(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
-			pstmt.setInt(1, id);
-			pstmt.executeUpdate();
+		String professor = "delete from professor where id_professor = " + id + ";";
+		String pessoa = "delete from pessoa where id_pessoa = " + selecionaID(id, 2) + ";";
+		try (Connection conn = this.conecta();
+				PreparedStatement delprofessor = conn.prepareStatement(professor);
+				PreparedStatement delpessoa = conn.prepareStatement(pessoa)) {
+			delpessoa.executeUpdate();
+			delprofessor.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}

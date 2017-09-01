@@ -1,7 +1,5 @@
 package lista_5.dependencias;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Agenda {
@@ -52,58 +50,39 @@ public class Agenda {
 	}
 
 	public void listarAluno() {
-		sqliteBD.selecionaAluno(1);		
+		sqliteBD.selecionaAluno(1);
 	}
 
 	public void listarProfessor() {
 		sqliteBD.selecionaProfessor(1);
 	}
 
-	public void mostraAluno() {
-		/*
-		 * try {
-		 * 
-		 * ResultSet al = sqliteBD.selecionaAluno();
-		 * System.out.println("Selecione quem deseja editar:"); while (al.next()) {
-		 * String[] ps = sqliteBD.seleciona(al.getInt(3));
-		 * System.out.println(al.getInt(1) + " - " + ps.getString(2));
-		 * System.out.println("Matricula: " + al.getString(2)); } } catch (SQLException
-		 * e) { System.out.println(e.getMessage()); }
-		 */
-	}
-
-	public void mostraProfessor() {
-		ResultSet rs = sqliteBD.selecionaProfessor();
-		System.out.println("Selecione quem deseja editar:");
-		try {
-			while (rs.next()) {
-				System.out.println(rs.getInt(1) + " - " + rs.getString(2));
-				System.out.println("Registro: " + rs.getString("registro"));
-			}
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-	}
-
 	public void editarAluno() {
+
+		System.out.println("Qual aluno deseja atualizar:");
+		sqliteBD.selecionaAluno(0);
+		int id = scanner.nextInt();
 		Aluno aluno = cadastrarAluno();
-		sqliteBD.atualizaAluno(scanner.nextInt(), aluno.getNome(), aluno.getEmail(), aluno.getTelefone(),
-				aluno.getNumeroMatricula());
+		sqliteBD.atualizaAluno(id, aluno.getNome(), aluno.getEmail(), aluno.getTelefone(), aluno.getNumeroMatricula());
+
 	}
 
 	public void editarProfessor() {
 		Professor professor = cadastrarProfessor();
-		sqliteBD.atualizaProfessor(scanner.nextInt(), professor.getNome(), professor.getEmail(),
-				professor.getTelefone(), professor.getNumeroRegistro(), professor.getQuantidadeHoraAula());
+		System.out.println("Qual professor deseja atualizar:");
+		sqliteBD.selecionaProfessor(0);
+		int id = scanner.nextInt();
+		sqliteBD.atualizaProfessor(id, professor.getNome(), professor.getEmail(), professor.getTelefone(),
+				professor.getNumeroRegistro(), professor.getQuantidadeHoraAula());
 	}
 
 	public void deletaAluno() {
-		mostraAluno();
+		sqliteBD.selecionaAluno(0);
 		sqliteBD.deleteAluno(scanner.nextInt());
 	}
 
 	public void deletaProfessor() {
-		mostraProfessor();
+		sqliteBD.selecionaProfessor(0);
 		sqliteBD.deleteProfessor(scanner.nextInt());
 	}
 }
