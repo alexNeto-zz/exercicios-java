@@ -6,6 +6,7 @@ public class Aplicacao {
 
 	public static void aplicacao() {
 
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Entre um tipo de permanência\n" + "1 - Array\n2 - Vector\n3 - ArrayList");
 		int appPer = scanner.nextInt();

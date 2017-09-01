@@ -3,8 +3,6 @@ package lista_4.dependencias;
 import java.util.Iterator;
 import java.util.Scanner;
 
-import lista_4.dependencias.*;
-
 public class AppMan {
 
 	private Agenda agenda = new Agenda();

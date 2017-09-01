@@ -4,7 +4,10 @@ import java.util.Scanner;
 
 public class Menu {
 
-	public static void imprimirOpcoes() {
+	Scanner scanner = new Scanner(System.in);
+	private Agenda agenda = new Agenda();
+
+	public void imprimirOpcoes() {
 		System.out.println("\nEscolha uma das opções: \n");
 		System.out.println("1 - Cadastrar Aluno");
 		System.out.println("2 - Cadastrar Professor");
@@ -18,11 +21,7 @@ public class Menu {
 		System.out.println();
 	}
 
-	public static void menuPrincipal() {
-
-		@SuppressWarnings("resource")
-		Scanner scanner = new Scanner(System.in);
-		Agenda agenda = new Agenda();
+	public void menuPrincipal() {
 
 		int sair = 0;
 		int opcao = 0;
@@ -41,7 +40,7 @@ public class Menu {
 				opcao = 0;
 				break;
 			case 3:
-				agenda.listarAlunos();
+				agenda.listarAluno();
 				opcao = 0;
 				break;
 			case 4:
