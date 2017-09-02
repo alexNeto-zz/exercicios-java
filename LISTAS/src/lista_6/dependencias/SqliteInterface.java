@@ -76,7 +76,8 @@ public class SqliteInterface implements SqliteCIAD {
 	}
 
 	public void selecionaProdutos() {
-		String sql = "select * from produtos;";
+		
+		String sql = "select * from produtos order by produto asc;";
 		try (Connection conn = this.conecta();
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(sql)) {
