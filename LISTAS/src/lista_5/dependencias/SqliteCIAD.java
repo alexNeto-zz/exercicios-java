@@ -6,7 +6,5 @@ public interface SqliteCIAD {
 	
 	void cria();
 	void insere(String nome, String email, String telefone);
-	void atualiza();
-	void deleta();
 
 }

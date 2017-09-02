@@ -11,7 +11,7 @@ public class Main {
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		int escolha = 0;
-		while (true && escolha != 7) {
+		while (true && escolha != 4) {
 			System.out.println("Escolha um Exercicio:");
 			System.out.printf("1 - Agenda 1\n" + "2 - Exercicio 2\n" + "3 - Exercicio 3\n" + "4 - Sair\n");
 			escolha = scanner.nextInt();
@@ -35,6 +35,9 @@ public class Main {
 					numeros[i] = scanner.nextDouble();
 				}
 				Exercicio_3.exercicio(numeros);
+				break;
+			case 4:
+				System.out.println("obrigado pela preferência");
 				break;
 			default:
 				break;

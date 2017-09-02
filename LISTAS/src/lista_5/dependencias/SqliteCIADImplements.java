@@ -100,17 +100,4 @@ public class SqliteCIADImplements implements SqliteCIAD {
 			System.out.println(e.getMessage());
 		}
 	}
-
-	@Override
-	public void atualiza() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void deleta() {
-		// TODO Auto-generated method stub
-
-	}
-
 }
