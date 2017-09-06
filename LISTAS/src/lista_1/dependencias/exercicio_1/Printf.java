@@ -6,7 +6,7 @@ public class Printf {
 		String s1 = "como essa";
 		String s2 = "ou essa";
 		System.out.printf(
-				"printf - Imprimi uma String formatada, ou seja,\npodemos colocar valores de variável\nno meio do texto, %s %s",
+				"printf - Imprimi uma String formatada, ou seja,\npodemos colocar valores de variável\nno meio do texto, %s %s\n",
 				s1, s2);
 	}
 }
