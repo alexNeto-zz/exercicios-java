@@ -17,8 +17,9 @@ public class UsuariosDB implements InterfaceCIAD {
 			System.out.println(e.getMessage());
 		}
 	}
-
-	protected Connection conecta() {
+	
+	@Override
+	public Connection conecta() {
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection(URL);

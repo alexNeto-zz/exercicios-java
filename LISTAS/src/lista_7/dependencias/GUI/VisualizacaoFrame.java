@@ -7,12 +7,10 @@ import javax.swing.JLabel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JEditorPane;
 import javax.swing.JList;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.AbstractListModel;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
 
 public class VisualizacaoFrame {
 
