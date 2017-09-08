@@ -1,15 +1,30 @@
 package lista_1;
 
+import java.util.Scanner;
+
 public class Exercicio_3 {
 	
-	java.util.Scanner input = new java.util.Scanner(System.in);
-	
-	System.out.println("Digite cinco n�meros: ");
-	int[] numeros = new int[5];
-	for(int i = 0; i < 5; i++)
-		int numero[i] = input.nextInt();
-	
-	numeros = numeros.sort();
-	
-	System.out.printf("O menor n�mero �: %d e o maior � %d", numeros[0], numeros[4]);
+	public static void exercicio() {
+		@SuppressWarnings("resource")
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Digite um número:");
+		int numero1 = input.nextInt();
+		System.out.println("Digite outro número:");
+		int numero2 = input.nextInt();
+		
+		if (numero1 < numero2) {
+			System.out.println("numero1 < numero2");
+		}
+		if (numero1 > numero2) {
+			System.out.println("numero1 > numero2");
+		}
+		if (numero1 == numero2) {
+			System.out.println("numero1 = numero2");
+		}
+		if (numero1 != numero2) {
+			System.out.println("numero1 != numero2");
+		}
+	}
+
 }

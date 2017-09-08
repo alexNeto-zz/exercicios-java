@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="lista_7.dependencias.Data"/>
+<fullyQualifiedTypeName name="lista_7.dependencias.GUI.CadastroFrame"/>
+<fullyQualifiedTypeName name="lista_7.dependencias.GUI.VisualizacaoFrame"/>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="lista_7.dependencias.GUI.WidgetsComuns"/>
+<fullyQualifiedTypeName name="javax.swing.JPanel"/>
+<fullyQualifiedTypeName name="lista_7.dependencias.GUI.AtualizarFrame"/>
+<fullyQualifiedTypeName name="lista_7.dependencias.GUI.TabCadastro"/>
+<fullyQualifiedTypeName name="javax.swing.DefaultComboBoxModel"/>
+<fullyQualifiedTypeName name="javax.swing.JTextArea"/>
+<fullyQualifiedTypeName name="java.awt.Font"/>
+<fullyQualifiedTypeName name="javax.swing.JScrollPane"/>
+</qualifiedTypeNameHistroy>
