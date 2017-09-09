@@ -20,7 +20,7 @@ public class WidgetsComuns extends JFrame implements ActionListener, WindowListe
 
 	protected int idData = data.idAtual();
 
-	protected JLabel dataLabel = new JLabel(data.dataFormatada(), JLabel.CENTER);
+	protected JLabel dataLabel = new JLabel("Data: " + data.dataFormatada(), JLabel.CENTER);
 	protected JLabel montanteLabel = new JLabel("Montante");
 	protected JLabel descricaoLabel = new JLabel("Descrição");
 	protected JButton sairButton = new JButton("Sair");

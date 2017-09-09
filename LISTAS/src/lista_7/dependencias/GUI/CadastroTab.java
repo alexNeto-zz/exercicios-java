@@ -19,7 +19,7 @@ public class CadastroTab extends WidgetsComuns{
 		comboBox.setBounds(35, 12, 250, 40);
 		cadastroPane.add(comboBox);
 
-		dataLabel.setBounds(307, 17, 109, 40);
+		dataLabel.setBounds(450, 17, 109, 40);
 		cadastroPane.add(dataLabel);
 
 		montanteLabel.setBounds(35, 60, 250, 15);
@@ -32,15 +32,15 @@ public class CadastroTab extends WidgetsComuns{
 		descricaoLabel.setBounds(35, 130, 66, 15);
 		cadastroPane.add(descricaoLabel);
 
-		descricaoTextArea.setBounds(35, 150, 250, 120);
+		descricaoTextArea.setBounds(35, 150, 400, 140);
 		descricaoTextArea.setLineWrap(true);
 		descricaoTextArea.setWrapStyleWord(true);
 		cadastroPane.add(descricaoTextArea);
 
-		salvarButton.setBounds(35, 280, 114, 40);
+		salvarButton.setBounds(35, 320, 114, 40);
 		cadastroPane.add(salvarButton);
 		
-		sairButton.setBounds(295, 340, 114, 40);
+		sairButton.setBounds(450, 320, 114, 40);
 		cadastroPane.add(sairButton);
 
 		salvarButton.addActionListener(this);

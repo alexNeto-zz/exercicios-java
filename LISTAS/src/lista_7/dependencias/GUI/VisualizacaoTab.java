@@ -30,8 +30,12 @@ public class VisualizacaoTab extends WidgetsComuns{
 		descricaoLabel.setBounds(220, 60, 66, 15);
 		VisualizacaoPane.add(descricaoLabel);
 		
+		JLabel data2Label = new JLabel("Data");
+		data2Label.setBounds(400, 60, 60, 15);
+		VisualizacaoPane.add(data2Label);
+		
 	    JPanel panel = new JPanel(new BorderLayout());
-	    panel.setBounds(35, 80, 370, 250);
+	    panel.setBounds(35, 80, 525, 220);
 
         List<String> labels = new ArrayList<>(25);
         for (int index = 0; index < 100; index++) {
@@ -46,10 +50,10 @@ public class VisualizacaoTab extends WidgetsComuns{
         panel.add(listScroller);
         VisualizacaoPane.add(panel);
        
-    	sairButton.setBounds(295, 340, 114, 40);
+    	sairButton.setBounds(450, 320, 114, 40);
 		VisualizacaoPane.add(sairButton);
 		
-        atualizarButton.setBounds(35, 340, 114, 40);
+        atualizarButton.setBounds(35, 320, 114, 40);
 		VisualizacaoPane.add(atualizarButton);		
 		
 		atualizarButton.addActionListener(this);
