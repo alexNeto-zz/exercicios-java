@@ -23,12 +23,25 @@ public class MainDB {
 			vendas.insere();
 			break;
 		case 1:
+			recebimentos.setMontante(montante);
+			recebimentos.setDescricao(descricao);
+			recebimentos.setData(idData);
+			recebimentos.insere();
 			break;
 		case 2:
+			pagamentos.setMontante(montante);
+			pagamentos.setDescricao(descricao);
+			pagamentos.setData(idData);
+			pagamentos.insere();
 			break;
 		case 3:
+			despesas.setMontante(montante);
+			despesas.setDescricao(descricao);
+			despesas.setData(idData);
+			despesas.insere();
 			break;
 		default:
+			System.out.println("não esqueça de implementar as modificações em MainDB()");
 			break;
 		}
 	}
