@@ -33,42 +33,5 @@ public class Main {
 				}
 			}
 		});
-/*
-		EventQueue.invokeLater(new Runnable() {
-
-			public void run() {
-				try {
-					CadastroFrame window = new CadastroFrame();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-
-		EventQueue.invokeLater(new Runnable() {
-
-			public void run() {
-				try {
-					MenuFrame window = new MenuFrame();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-
-		EventQueue.invokeLater(new Runnable() {
-
-			public void run() {
-				try {
-					VisualizacaoFrame window = new VisualizacaoFrame();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		*/
 	}
 }

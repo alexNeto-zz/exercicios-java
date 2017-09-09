@@ -1,6 +1,8 @@
 package lista_7.dependencias.GUI;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
 
 import javax.swing.*;
 
@@ -14,14 +16,15 @@ public class TabCadastro extends MainFrame {
 	private JTextArea descricaoTextArea = new JTextArea();
 
 	private JButton salvarButton = new JButton("Salvar");
+	
+	private JPanel panel;
 
 
 	public TabCadastro() {
-		// TODO Auto-generated constructor stub
-
+		
 		frame.getContentPane().add(tabbedPane, BorderLayout.CENTER);
 
-		JPanel panel = new JPanel();
+		panel = new JPanel();
 		tabbedPane.addTab("Cadastro", null, panel, null);
 		panel.setLayout(null);
 
@@ -34,7 +37,7 @@ public class TabCadastro extends MainFrame {
 		dataLabel.setBounds(307, 17, 109, 40);
 		panel.add(dataLabel);
 
-		montanteLabel.setBounds(35, 60, 66, 15);
+		montanteLabel.setBounds(35, 60, 250, 15);
 		panel.add(montanteLabel);
 
 		montanteTextField.setBounds(35, 80, 250, 40);
@@ -51,7 +54,31 @@ public class TabCadastro extends MainFrame {
 
 		salvarButton.setBounds(35, 280, 114, 40);
 		panel.add(salvarButton);
+		
+		salvarButton.addActionListener(this);
+		this.addWindowListener(this);
 
-
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource().equals(salvarButton)) {
+			montanteLabel.setText("Montante");
+			montanteLabel.setForeground(Color.black);
+			double montante;
+			try{
+				montante = Double.parseDouble(montanteTextField.getText());
+				bancoDados.inserir(comboBox.getSelectedIndex(), montante, descricaoTextArea.getText(), idData);
+			}catch (NumberFormatException err) {
+				montanteLabel.setText("Montante - deve ser um número (xx.xx)");
+				montanteLabel.setForeground(Color.red);
+				
+			}
+			montanteTextField.setText("");
+			descricaoTextArea.setText("");
+		}
+		if(e.getSource().equals(sairButton)) {
+			System.exit(1);
+		}
 	}
 }

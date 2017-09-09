@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
-<fullyQualifiedTypeName name="lista_7.dependencias.Data"/>
 <fullyQualifiedTypeName name="lista_7.dependencias.GUI.CadastroFrame"/>
 <fullyQualifiedTypeName name="lista_7.dependencias.GUI.VisualizacaoFrame"/>
 <fullyQualifiedTypeName name="javax.swing.JFrame"/>
@@ -13,4 +12,15 @@
 <fullyQualifiedTypeName name="javax.swing.JTextArea"/>
 <fullyQualifiedTypeName name="java.awt.Font"/>
 <fullyQualifiedTypeName name="javax.swing.JScrollPane"/>
+<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<fullyQualifiedTypeName name="java.awt.event.WindowListener"/>
+<fullyQualifiedTypeName name="javax.swing.JLabel"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="lista_7.dependencias.Data"/>
+<fullyQualifiedTypeName name="lista_7.dependencias.DB.MainDB"/>
+<fullyQualifiedTypeName name="lista_7.dependencias.DB.VendasDB"/>
+<fullyQualifiedTypeName name="lista_7.dependencias.DB.RecebimentosDB"/>
+<fullyQualifiedTypeName name="lista_7.dependencias.DB.DespesasDB"/>
+<fullyQualifiedTypeName name="lista_7.dependencias.DB.PagamentosDB"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
 </qualifiedTypeNameHistroy>

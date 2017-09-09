@@ -46,7 +46,7 @@ public class UsuariosDB implements InterfaceCIAD {
 
 	@Override
 	public void insere() {
-		String usuario = "insert into produtos(primeiro_nome, ultimo_nome, senha, nome_usuario, email) values(?, ?, ?, ?, ?);";
+		String usuario = "insert into usuario(primeiro_nome, ultimo_nome, senha, nome_usuario, email) values(?, ?, ?, ?, ?);";
 		try (Connection conn = this.conecta(); PreparedStatement pstmt = conn.prepareStatement(usuario)) {
 			pstmt.setString(1, primeiroNome);
 			pstmt.setString(2, ultimoNome);
