@@ -8,12 +8,14 @@ import java.awt.event.WindowListener;
 import javax.swing.*;
 
 import lista_7.dependencias.DB.DataDB;
+import lista_7.dependencias.DB.MainDB;
 
 @SuppressWarnings("serial")
 public class WidgetsComuns extends JFrame implements ActionListener, WindowListener {
 
 	JFrame frame = new JFrame();
 
+	protected MainDB bancoDados = new MainDB();
 	DataDB data = new DataDB();
 
 	protected int idData = data.idAtual();
@@ -21,7 +23,9 @@ public class WidgetsComuns extends JFrame implements ActionListener, WindowListe
 	protected JLabel dataLabel = new JLabel(data.dataFormatada(), JLabel.CENTER);
 	protected JLabel montanteLabel = new JLabel("Montante");
 	protected JLabel descricaoLabel = new JLabel("Descrição");
-
+	protected JButton sairButton = new JButton("Sair");
+	protected JTextField montanteTextField = new JTextField();
+	protected JTextArea descricaoTextArea = new JTextArea();
 	protected JButton voltarButton = new JButton("Voltar");
 
 	protected JComboBox<String> comboBox = new JComboBox<String>();

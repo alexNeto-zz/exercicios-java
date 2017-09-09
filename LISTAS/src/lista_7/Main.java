@@ -26,7 +26,7 @@ public class Main {
 			public void run() {
 				try {
 					//MenuFrame window = 
-					new TabCadastro();
+					new MainFrame();
 				//	window.getFrame().setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

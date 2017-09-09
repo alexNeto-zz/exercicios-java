@@ -1,19 +1,13 @@
 package lista_7.dependencias.GUI;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
+import java.awt.*;
 
-import lista_7.dependencias.DB.MainDB;
+import javax.swing.*;
 
+public class MainFrame {
 
-@SuppressWarnings("serial")
-public class MainFrame extends WidgetsComuns {
-
-	protected MainDB bancoDados = new MainDB();
-	
-	JButton sairButton = new JButton("Sair");
-
-	protected JFrame frame;
+	JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+	private JFrame frame;
 
 	public MainFrame() {
 		initialize();
@@ -25,10 +19,9 @@ public class MainFrame extends WidgetsComuns {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 
-		sairButton.setBounds(306, 382, 114, 40);
-		frame.add(sairButton);
-
-		sairButton.addActionListener(this);
-		this.addWindowListener(this);
+		frame.getContentPane().add(tabbedPane, BorderLayout.CENTER);
+		tabbedPane.addTab("Cadastro", new CadastroTab().getCadastroPane());
+		tabbedPane.addTab("Visualizar", new VisualizacaoTab().getVisualizacaoPane());
+	
 	}
 }
