@@ -1,10 +1,10 @@
 package lista_7.dependencias.DB;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import lista_7.dependencias.*;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class VendasDB extends AtributosComuns implements InterfaceCIAD {
 
@@ -31,8 +31,8 @@ public class VendasDB extends AtributosComuns implements InterfaceCIAD {
 
 	@Override
 	public void cria() {
-		String cria = "create table if not exists " + TABELA + "("
-				+ "id_" + TABELA + " integer not null primary key autoincrement," + "id_data integer not null,"
+		String cria = "create table if not exists " + TABELA + "(" + "id_" + TABELA
+				+ " integer not null primary key autoincrement," + "id_data integer not null,"
 				+ "montante decimal(15, 2) not null," + "descricao text,"
 				+ "foreign key (id_data) references data(id_data) on update set default" + ");";
 
@@ -56,6 +56,28 @@ public class VendasDB extends AtributosComuns implements InterfaceCIAD {
 		}
 
 	}
+
+	
+	public List<Dados> seleciona() {
+		
+		ArrayList<Dados> dados = new ArrayList<Dados>();
+		String sql = "select * from " + TABELA + ";";
+		try (Connection conn = this.conecta();
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(sql)){
+			while (rs.next()) {
+				Dados dado = new Dados();
+
+				dado.setMontante(rs.getDouble("montante"));
+				dado.setDescricao(rs.getString("descricao"));
+				//contato.setData(rs.getString("data"));
+				dados.add(dado);
+			}
+		} catch (Exception e) {
+		}
+		return dados;
+	}
+	
 
 	@Override
 	public void atualiza() {

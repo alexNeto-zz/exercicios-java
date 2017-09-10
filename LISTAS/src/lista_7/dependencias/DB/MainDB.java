@@ -1,5 +1,10 @@
 package lista_7.dependencias.DB;
 
+
+import java.util.List;
+
+import lista_7.dependencias.Dados;
+
 public class MainDB {
 
 	VendasDB vendas = new VendasDB();
@@ -41,8 +46,32 @@ public class MainDB {
 			despesas.insere();
 			break;
 		default:
-			System.out.println("não esqueça de implementar as modificações em MainDB()");
+			eMes();
 			break;
 		}
+	}
+	
+	public List<Dados> visualizar(int modo) {
+		
+		
+		switch (modo) {
+		case 0:
+			return vendas.seleciona();
+		case 1:
+			return recebimentos.seleciona();
+		case 2:
+			return pagamentos.seleciona();
+		case 3:
+			return despesas.seleciona();
+		default:
+			eMes();
+			break;
+		}
+		
+		return null;
+	}
+	
+	private void eMes() {
+		System.out.println("não esqueça de implementar as modificações em MainDB()");
 	}
 }

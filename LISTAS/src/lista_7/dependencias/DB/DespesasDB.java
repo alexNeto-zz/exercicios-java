@@ -1,6 +1,10 @@
 package lista_7.dependencias.DB;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import lista_7.dependencias.Dados;
 
 public class DespesasDB extends AtributosComuns implements InterfaceCIAD {
 
@@ -53,6 +57,26 @@ public class DespesasDB extends AtributosComuns implements InterfaceCIAD {
 
 	}
 
+	public List<Dados> seleciona() {
+		
+		ArrayList<Dados> dados = new ArrayList<Dados>();
+		String sql = "select * from " + TABELA + ";";
+		try (Connection conn = this.conecta();
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(sql)){
+			while (rs.next()) {
+				Dados dado = new Dados();
+
+				dado.setMontante(rs.getDouble("montante"));
+				dado.setDescricao(rs.getString("descricao"));
+				//contato.setData(rs.getString("data"));
+				dados.add(dado);
+			}
+		} catch (Exception e) {
+		}
+		return dados;
+	}
+	
 	@Override
 	public void atualiza() {
 		// TODO Auto-generated method stub

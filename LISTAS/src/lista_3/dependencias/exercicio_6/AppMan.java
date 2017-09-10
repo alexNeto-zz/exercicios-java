@@ -117,7 +117,7 @@ public class AppMan {
 		int index = scanner.nextInt();
 		System.out.println("Qual o valor da nova compra: ");
 		double valor = scanner.nextDouble();
-		clientes.get(index - 1).novoGasto(valor);;
+		clientes.get(index - 1).novoGasto(valor);
 	}
 	
 

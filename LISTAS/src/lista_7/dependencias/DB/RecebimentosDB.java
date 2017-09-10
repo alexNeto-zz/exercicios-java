@@ -3,8 +3,13 @@ package lista_7.dependencias.DB;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import lista_7.dependencias.Dados;
 
 public class RecebimentosDB extends AtributosComuns implements InterfaceCIAD {
 
@@ -55,6 +60,26 @@ public class RecebimentosDB extends AtributosComuns implements InterfaceCIAD {
 			System.out.println(e.getMessage());
 		}
 
+	}
+	
+	public List<Dados> seleciona() {
+		
+		ArrayList<Dados> dados = new ArrayList<Dados>();
+		String sql = "select * from " + TABELA + ";";
+		try (Connection conn = this.conecta();
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(sql)){
+			while (rs.next()) {
+				Dados dado = new Dados();
+
+				dado.setMontante(rs.getDouble("montante"));
+				dado.setDescricao(rs.getString("descricao"));
+				//contato.setData(rs.getString("data"));
+				dados.add(dado);
+			}
+		} catch (Exception e) {
+		}
+		return dados;
 	}
 
 	@Override
