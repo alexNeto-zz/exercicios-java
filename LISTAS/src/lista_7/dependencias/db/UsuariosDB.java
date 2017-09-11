@@ -1,4 +1,4 @@
-package lista_7.dependencias.DB;
+package lista_7.dependencias.db;
 
 import java.sql.*;
 
@@ -9,7 +9,8 @@ public class UsuariosDB implements InterfaceCIAD {
 	private String nomeUsuario;
 	private String email;
 	private String senha;
-	
+	private boolean salvo = false;
+
 	public UsuariosDB() {
 		try (Connection conn = DriverManager.getConnection(URL)) {
 			cria();
@@ -17,7 +18,7 @@ public class UsuariosDB implements InterfaceCIAD {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	@Override
 	public Connection conecta() {
 		Connection conn = null;
@@ -54,9 +55,29 @@ public class UsuariosDB implements InterfaceCIAD {
 			pstmt.setString(4, nomeUsuario);
 			pstmt.setString(5, email);
 			pstmt.executeUpdate();
+			salvo = true;
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
+			salvo = false;
 		}
+	}
+
+	public boolean seleciona(String username, String passwd) {
+
+		String user = "select * from usuario where nome_usuario = \"" + username + "\";";
+		String password = "select * from usuario where senha = \"" + passwd + "\";";
+		try (Connection conn = this.conecta();
+				Statement ustmt = conn.createStatement();
+				Statement pstmt = conn.createStatement();
+				ResultSet usuario = ustmt.executeQuery(user);
+				ResultSet pass = pstmt.executeQuery(password)) {
+			if((usuario.getInt(1) == pass.getInt(1)) && pass.getInt(1) > 0 ) {
+				return true;
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return false;
 	}
 
 	@Override
@@ -68,6 +89,18 @@ public class UsuariosDB implements InterfaceCIAD {
 	public void deleta(int id) {
 
 		// quem sabe colocar uma area para deletar usuario, vai que ele é demitido
+	}
+
+	public boolean getSalvo() {
+		return salvo;
+	}
+
+	public void setNovoUsuario(String[] dadosUsuario) {
+		this.primeiroNome = dadosUsuario[0];
+		this.ultimoNome = dadosUsuario[1];
+		this.nomeUsuario = dadosUsuario[2];
+		this.email = dadosUsuario[3];
+		this.senha = dadosUsuario[4];
 	}
 
 }

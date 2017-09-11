@@ -4,7 +4,8 @@ import java.awt.EventQueue;
 
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import lista_7.dependencias.LOGIN.InicioFrame;
+
+import lista_7.dependencias.gui.login.InicioFrame;
 
 public class Main {
 

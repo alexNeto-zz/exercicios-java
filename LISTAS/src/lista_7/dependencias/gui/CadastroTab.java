@@ -1,4 +1,4 @@
-package lista_7.dependencias.GUI;
+package lista_7.dependencias.gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.*;

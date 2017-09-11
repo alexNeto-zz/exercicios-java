@@ -1,16 +1,16 @@
-package lista_7.dependencias.DB;
+package lista_7.dependencias.db;
+
+import lista_7.dependencias.*;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import lista_7.dependencias.Dados;
+public class VendasDB extends AtributosComuns implements InterfaceCIAD {
 
-public class DespesasDB extends AtributosComuns implements InterfaceCIAD {
+	private final String TABELA = "vendas";
 
-	private final String TABELA = "despesas";
-
-	public DespesasDB() {
+	public VendasDB() {
 		try (Connection conn = DriverManager.getConnection(URL)) {
 			cria();
 		} catch (SQLException e) {
@@ -31,8 +31,8 @@ public class DespesasDB extends AtributosComuns implements InterfaceCIAD {
 
 	@Override
 	public void cria() {
-		String cria = "create table if not exists " + TABELA + "("
-				+ "id_" + TABELA + " integer not null primary key autoincrement," + "id_data integer not null,"
+		String cria = "create table if not exists " + TABELA + "(" + "id_" + TABELA
+				+ " integer not null primary key autoincrement," + "id_data integer not null,"
 				+ "montante decimal(15, 2) not null," + "descricao text,"
 				+ "foreign key (id_data) references data(id_data) on update set default" + ");";
 
@@ -57,6 +57,7 @@ public class DespesasDB extends AtributosComuns implements InterfaceCIAD {
 
 	}
 
+	
 	public List<Dados> seleciona() {
 		
 		ArrayList<Dados> dados = new ArrayList<Dados>();
@@ -77,6 +78,7 @@ public class DespesasDB extends AtributosComuns implements InterfaceCIAD {
 		return dados;
 	}
 	
+
 	@Override
 	public void atualiza() {
 		// TODO Auto-generated method stub

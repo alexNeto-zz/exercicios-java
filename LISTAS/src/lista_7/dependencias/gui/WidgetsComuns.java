@@ -1,4 +1,4 @@
-package lista_7.dependencias.GUI;
+package lista_7.dependencias.gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,8 +7,8 @@ import java.awt.event.WindowListener;
 
 import javax.swing.*;
 
-import lista_7.dependencias.DB.DataDB;
-import lista_7.dependencias.DB.MainDB;
+import lista_7.dependencias.db.DataDB;
+import lista_7.dependencias.db.MainDB;
 
 @SuppressWarnings("serial")
 public class WidgetsComuns extends JFrame implements ActionListener, WindowListener {

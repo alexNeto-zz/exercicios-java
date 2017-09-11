@@ -1,4 +1,4 @@
-package lista_7.dependencias.DB;
+package lista_7.dependencias.db;
 
 
 import java.util.List;

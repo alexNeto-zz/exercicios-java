@@ -1,21 +1,16 @@
-package lista_7.dependencias.DB;
+package lista_7.dependencias.db;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 import lista_7.dependencias.Dados;
 
-public class PagamentosDB extends AtributosComuns implements InterfaceCIAD {
+public class DespesasDB extends AtributosComuns implements InterfaceCIAD {
 
-	private final String TABELA = "pagamentos";
+	private final String TABELA = "despesas";
 
-	public PagamentosDB() {
+	public DespesasDB() {
 		try (Connection conn = DriverManager.getConnection(URL)) {
 			cria();
 		} catch (SQLException e) {
@@ -61,7 +56,7 @@ public class PagamentosDB extends AtributosComuns implements InterfaceCIAD {
 		}
 
 	}
-	
+
 	public List<Dados> seleciona() {
 		
 		ArrayList<Dados> dados = new ArrayList<Dados>();
@@ -81,7 +76,7 @@ public class PagamentosDB extends AtributosComuns implements InterfaceCIAD {
 		}
 		return dados;
 	}
-
+	
 	@Override
 	public void atualiza() {
 		// TODO Auto-generated method stub

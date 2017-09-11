@@ -1,4 +1,4 @@
-package lista_7.dependencias.DB;
+package lista_7.dependencias.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,11 +11,11 @@ import java.util.List;
 
 import lista_7.dependencias.Dados;
 
-public class RecebimentosDB extends AtributosComuns implements InterfaceCIAD {
+public class PagamentosDB extends AtributosComuns implements InterfaceCIAD {
 
-	private final String TABELA = "recebimentos";
+	private final String TABELA = "pagamentos";
 
-	public RecebimentosDB() {
+	public PagamentosDB() {
 		try (Connection conn = DriverManager.getConnection(URL)) {
 			cria();
 		} catch (SQLException e) {

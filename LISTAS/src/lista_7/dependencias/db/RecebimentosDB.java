@@ -1,16 +1,21 @@
-package lista_7.dependencias.DB;
+package lista_7.dependencias.db;
 
-import lista_7.dependencias.*;
-
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VendasDB extends AtributosComuns implements InterfaceCIAD {
+import lista_7.dependencias.Dados;
 
-	private final String TABELA = "vendas";
+public class RecebimentosDB extends AtributosComuns implements InterfaceCIAD {
 
-	public VendasDB() {
+	private final String TABELA = "recebimentos";
+
+	public RecebimentosDB() {
 		try (Connection conn = DriverManager.getConnection(URL)) {
 			cria();
 		} catch (SQLException e) {
@@ -31,8 +36,8 @@ public class VendasDB extends AtributosComuns implements InterfaceCIAD {
 
 	@Override
 	public void cria() {
-		String cria = "create table if not exists " + TABELA + "(" + "id_" + TABELA
-				+ " integer not null primary key autoincrement," + "id_data integer not null,"
+		String cria = "create table if not exists " + TABELA + "("
+				+ "id_" + TABELA + " integer not null primary key autoincrement," + "id_data integer not null,"
 				+ "montante decimal(15, 2) not null," + "descricao text,"
 				+ "foreign key (id_data) references data(id_data) on update set default" + ");";
 
@@ -56,7 +61,6 @@ public class VendasDB extends AtributosComuns implements InterfaceCIAD {
 		}
 
 	}
-
 	
 	public List<Dados> seleciona() {
 		
@@ -77,7 +81,6 @@ public class VendasDB extends AtributosComuns implements InterfaceCIAD {
 		}
 		return dados;
 	}
-	
 
 	@Override
 	public void atualiza() {
