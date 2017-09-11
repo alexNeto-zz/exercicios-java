@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import lista_7.dependencias.LOGIN.Login;
+import lista_7.dependencias.LOGIN.InicioFrame;
 
 public class Main {
 
@@ -24,7 +24,7 @@ public class Main {
 			public void run() {
 				try {
 					//MenuFrame window = 
-					new Login();
+					new InicioFrame();
 				//	window.getFrame().setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

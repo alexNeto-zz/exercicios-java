@@ -6,8 +6,9 @@ import java.awt.GridLayout;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 
-@SuppressWarnings("serial")
+
 public class Janela extends JFrame {
+
 	public Janela() {
 		Rabisco rab1 = new Rabisco(Color.RED);
 		Rabisco rab2 = new Rabisco(Color.BLUE);

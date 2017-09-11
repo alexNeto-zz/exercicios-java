@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 import javax.swing.JComponent;
 
-@SuppressWarnings("serial")
 public class Rabisco extends JComponent implements MouseListener, MouseMotionListener {
 	private ArrayList<Point> pontos;
 	private int tamanho = 8;
@@ -26,7 +25,6 @@ public class Rabisco extends JComponent implements MouseListener, MouseMotionLis
 		addMouseMotionListener(this);
 	}
 
-	@Override
 	protected void paintComponent(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setColor(Color.WHITE);
@@ -38,35 +36,28 @@ public class Rabisco extends JComponent implements MouseListener, MouseMotionLis
 		}
 	}
 
-	@Override
 	public void mouseDragged(MouseEvent e) {
 		pontos.add(e.getPoint());
 		repaint();
 	}
 
-	@Override
 	public void mousePressed(MouseEvent e) {
 		pontos.add(e.getPoint());
 		repaint();
 	}
 
-	@Override
 	public void mouseMoved(MouseEvent e) {
 	}
 
-	@Override
 	public void mouseClicked(MouseEvent e) {
 	}
 
-	@Override
 	public void mouseEntered(MouseEvent e) {
 	}
 
-	@Override
 	public void mouseExited(MouseEvent e) {
 	}
 
-	@Override
 	public void mouseReleased(MouseEvent e) {
 	}
 }
