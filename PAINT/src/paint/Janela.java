@@ -7,6 +7,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 
 
+@SuppressWarnings("serial")
 public class Janela extends JFrame {
 
 	public Janela() {
