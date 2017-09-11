@@ -74,6 +74,7 @@ public class VisualizacaoTab extends WidgetsComuns {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource().equals(atualizarButton)) {
+			atualizarButton.setText("Atualizar");
 
 			try {
 				modelo.setNumRows(0);

@@ -22,6 +22,7 @@ public class MainFrame {
 		frame.getContentPane().add(tabbedPane, BorderLayout.CENTER);
 		tabbedPane.addTab("Cadastro", new CadastroTab().getCadastroPane());
 		tabbedPane.addTab("Visualizar", new VisualizacaoTab().getVisualizacaoPane());
+		tabbedPane.addTab("Totais", new TotaisTab().getTotaisPane());
 	
 	}
 }

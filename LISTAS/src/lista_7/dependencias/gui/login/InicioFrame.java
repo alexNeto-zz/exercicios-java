@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 
 public class InicioFrame implements ActionListener{
 
-	private JFrame frame;
+	protected JFrame frame;
 	private Login login = new Login();
 	
 	
