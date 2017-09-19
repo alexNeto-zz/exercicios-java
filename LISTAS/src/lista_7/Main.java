@@ -9,9 +9,7 @@ import lista_7.dependencias.gui.login.InicioFrame;
 
 public class Main {
 
-	/**
-	 * Launch the application.
-	 */
+	
 	public static void main(String[] args) {
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -24,9 +22,7 @@ public class Main {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					//MenuFrame window = 
 					new InicioFrame();
-				//	window.getFrame().setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

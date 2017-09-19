@@ -15,7 +15,7 @@ public class Janela extends JFrame {
 		Rabisco rab2 = new Rabisco(Color.BLUE);
 		rab1.setBorder(BorderFactory.createLineBorder(Color.RED));
 		rab2.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-		getContentPane().setLayout(new GridLayout(1, 2));
+		getContentPane().setLayout(new GridLayout(2, 2));
 		getContentPane().add(rab1);
 		getContentPane().add(rab2);
 		pack();

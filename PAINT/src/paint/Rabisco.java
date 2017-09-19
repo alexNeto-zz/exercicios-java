@@ -18,6 +18,7 @@ public class Rabisco extends JComponent implements MouseListener, MouseMotionLis
 	private int tamanho = 8;
 	private int metade = tamanho / 2;
 	private Color cor;
+	private Color corTemp;
 
 	public Rabisco(Color cor) {
 		this.cor = cor;
@@ -38,9 +39,9 @@ public class Rabisco extends JComponent implements MouseListener, MouseMotionLis
 	}
 
 	public void mouseDragged(MouseEvent e) {
-			pontos.add(e.getPoint());
-			repaint();
-		}
+		pontos.add(e.getPoint());
+		repaint();
+	}
 
 	public void mousePressed(MouseEvent e) {
 		if (e.getButton() == 1) {
@@ -48,6 +49,10 @@ public class Rabisco extends JComponent implements MouseListener, MouseMotionLis
 			repaint();
 		}
 		if (e.getButton() == 3) {
+			pontos.remove(e.getPoint());
+			repaint();
+		}
+		if (e.getButton() == 2) {
 			pontos.clear();
 			repaint();
 		}
@@ -57,6 +62,15 @@ public class Rabisco extends JComponent implements MouseListener, MouseMotionLis
 	}
 
 	public void mouseClicked(MouseEvent e) {
+		if(e.getButton() == 3) {
+			if(cor == Color.white) {
+				cor = corTemp;
+			}
+			else {
+				corTemp = cor;
+				cor = Color.white;
+			}
+		}
 	}
 
 	public void mouseEntered(MouseEvent e) {

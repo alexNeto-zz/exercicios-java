@@ -6,9 +6,11 @@ public class Exercicio_1 {
 
 	public static void exercicio() {
 		Print.print();
+		System.out.println();
 		System.out.println("--------------------------");
 		Println.println();
 		System.out.println("--------------------------");
 		Printf.printf();
+		System.out.println("--------------------------");
 	}
 }

@@ -14,6 +14,6 @@ public class Exercicio_3 {
 				maior = numeros[i];
 		}
 	
-		System.out.printf("\nO menor número é: %d e o maior é %d", menor, maior);
+		System.out.printf("\nO menor número é: %d e o maior é %d\n", menor, maior);
 	}
 }

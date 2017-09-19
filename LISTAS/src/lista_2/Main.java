@@ -66,9 +66,9 @@ public class Main {
 				break;
 			case 7:
 				System.out.println("EXERCICIO 7");
-				System.out.println("Digite a quantidade de horas trabalhadas: ");
+				System.out.println("Digite a quantidade de horas trabalhadas (##,##): ");
 				horasTrabalhadas = input.nextDouble();
-				System.out.println("Digite o valor da hora: ");
+				System.out.println("Digite o valor da hora(##,##): ");
 				valorPorHora = input.nextDouble();
 				Exercicio_7.exercicio(horasTrabalhadas, valorPorHora);
 				break;

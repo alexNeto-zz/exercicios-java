@@ -16,7 +16,8 @@ public class Endereco {
 	public Endereco(String cep) {
 		try {
 			// testado no linux, acho que para windows tem que usar "\" para o caminho
-			Process p = Runtime.getRuntime().exec("python3 ./src/lista_3/dependencias_exercicio_6/getCep.py " + cep);
+			// se não estiver pegando o cep, é por causa do caminho do getCep.py
+			Process p = Runtime.getRuntime().exec("python3 ./src/lista_3/dependencias/exercicio_6/getCep.py " + cep);
 			BufferedReader bfr = new BufferedReader(new InputStreamReader(p.getInputStream()));
 
 			this.cep = bfr.readLine();

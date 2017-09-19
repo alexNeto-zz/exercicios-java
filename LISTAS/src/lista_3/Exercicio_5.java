@@ -33,7 +33,7 @@ public class Exercicio_5 {
 				break;
 			}
 			System.out.printf("%3d ", numeros[i]);
-			
 		}
+		System.out.println();
 	}
 }

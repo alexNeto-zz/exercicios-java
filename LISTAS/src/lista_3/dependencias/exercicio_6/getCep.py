@@ -2,7 +2,9 @@ import json
 import sys
 from urllib.request import urlopen
 
-
+#
+# script para pegar um determinado cep e devolver os dados
+#
 def getcep(cep):
 
     url = urlopen("https://viacep.com.br/ws/" + cep + "/json/").read().decode('utf-8')
