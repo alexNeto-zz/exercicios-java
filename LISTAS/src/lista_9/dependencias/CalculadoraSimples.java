@@ -4,8 +4,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import sun.awt.SunToolkit.InfiniteLoop;
-
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -111,18 +109,6 @@ public class CalculadoraSimples extends JFrame implements ActionListener {
 				exc.printStackTrace();
 			}
 		}
-
-		/*
-		 * if (e.getSource().equals(salvarButton)) { montanteLabel.setText("Montante");
-		 * montanteLabel.setForeground(Color.black); double montante; try { montante =
-		 * Double.parseDouble(montanteTextField.getText());
-		 * bancoDados.inserir(comboBox.getSelectedIndex(), montante,
-		 * descricaoTextArea.getText(), idData); } catch (NumberFormatException err) {
-		 * montanteLabel.setText("Montante - deve ser um número (xx.xx)");
-		 * montanteLabel.setForeground(Color.red);
-		 * 
-		 * } montanteTextField.setText(""); descricaoTextArea.setText(""); }
-		 */
 	}
 
 	private Double converteParaDouble(String numero) throws NumberFormatException {
